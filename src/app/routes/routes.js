@@ -10,9 +10,15 @@ module.exports = function(app){
         const produtosBanco = new app.infra.ProdutosDAO(connection);
          
        produtosBanco.lista(function(error, result){
-            response.render('produtos/lista', {lista:result});
+        response.format({
+            html: function(){
+                response.render('produtos/lista',{lista:result});
+            },
+            json: function(){
+                response.json(result)
+            }
+            });
         });
-
         connection.end();
     });
 
@@ -33,7 +39,7 @@ module.exports = function(app){
         response.render('produtos/form');
     });
 
-    app.post('/produtos/salva', function(request, response){
+    app.post('/produtos', function(request, response){
         const produto = request.body;    
         const connection = app.infra.ConnectionFactory();
         const produtosDao= new app.infra.ProdutosDAO(connection);
