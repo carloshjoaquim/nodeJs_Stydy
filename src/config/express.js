@@ -10,7 +10,10 @@ module.exports = function() {
     app.set('view engine', 'ejs'); // Setando variáveis para o express.
     app.set('views', './app/views'); // Setando pasta padrão para views.   
 
+    //Middleware
     app.use(bodyParser.urlencoded({extended:true}));
+    app.use(bodyParser.json());
+    //
 
     load('infra', {cwd: 'app'})
         .then('routes')
