@@ -36,11 +36,24 @@ module.exports = function(app){
     });
 
     app.get('/produtos/form', function(request, response){
-        response.render('produtos/form');
+        response.render('produtos/form', {errosValidacao: {}});
     });
 
     app.post('/produtos', function(request, response){
-        const produto = request.body;    
+        const produto = request.body;   
+        
+        request.assert('titulo', 'Título é obrigatório').notEmpty();
+        request.assert('preco', 'Formato do preço inválido').isFloat();
+        
+
+        var erros = request.validationErrors();
+
+        if(erros)
+        {
+            response.render('produtos/form', {errosValidacao: erros});
+            return;
+        }
+
         const connection = app.infra.ConnectionFactory();
         const produtosDao= new app.infra.ProdutosDAO(connection);
 
