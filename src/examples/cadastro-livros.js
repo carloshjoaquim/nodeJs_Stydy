@@ -19,7 +19,7 @@ var client = http.request(configuracoes, function(request){
 });
 
 var produto = {
-    titulo: 'Testando Post',
+    titulo: '',
     descricao: 'Criando requisição via POST para cadastro de livro',
     preco: 100
 };

@@ -36,7 +36,7 @@ module.exports = function(app){
     });
 
     app.get('/produtos/form', function(request, response){
-        response.render('produtos/form', {errosValidacao: {}});
+        response.render('produtos/form', {errosValidacao: {}, produto:{}});
     });
 
     app.post('/produtos', function(request, response){
@@ -50,8 +50,15 @@ module.exports = function(app){
 
         if(erros)
         {
-            response.render('produtos/form', {errosValidacao: erros});
-            return;
+            response.format({
+                html: function(){
+                    response.status(400).render('produtos/form', {errosValidacao: erros, produto: produto});           
+                },
+                json: function(){
+                    response.status(400).json(erros);                    
+            }   
+            });     
+            return;           
         }
 
         const connection = app.infra.ConnectionFactory();
