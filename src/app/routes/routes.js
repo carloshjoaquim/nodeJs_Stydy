@@ -5,11 +5,15 @@ module.exports = function(app){
         response.render("home/home");
     });
 
-    app.get('/produtos',function(request, response){
+    app.get('/produtos',function(request, response, next){
         const connection = app.infra.ConnectionFactory();
         const produtosBanco = new app.infra.ProdutosDAO(connection);
          
        produtosBanco.lista(function(error, result){
+            if(error){
+                return next(error);
+            }
+            
         response.format({
             html: function(){
                 response.render('produtos/lista',{lista:result});
