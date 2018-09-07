@@ -1,5 +1,31 @@
 <html>
+        <head>
+                <link rel="stylesheet" href="/css/bootstrap.css"/>
+                <link rel="stylesheet" href="/css/site/style.css"/>
+                <meta charset="utf-8">        
+        </head>
     <body>
+            <div class="container">
+                    <div class="header" id="navbarNav">
+                        <ul class="nav nav-pills pull-left">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="../">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../produtos/">Lista Livros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../produtos/form">Cadastro Livros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="../promocoes/form">Cadastro Promoções</a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+
+            <br><br>
+            <div id="conteudo">
         <form action="/promocoes" method="POST">
         <div>
             <input type="text" name="mensagem"/>
@@ -14,5 +40,6 @@
 
         <input type="submit" value="Cadastrar Promoção"/>
         </form>
+        </div>
     </body>
 </html>
