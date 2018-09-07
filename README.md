@@ -13,12 +13,12 @@
 
 ### 3. Referências
 
-    3.1. <a href="http://expressjs.com/pt-br/">Express </a>
+-    3.1. [Express](http://expressjs.com/pt-br/) : O Express é um framework para aplicativo da web do Node.js. 
 
-    3.2. <a href="https://github.com/jarradseers/express-load">Express-Load </a>
+-    3.2. [Express-Load](https://github.com/jarradseers/express-load) : Scripts de autoload (rotas, controladores, modelos ...) em um objeto.
 
-    3.3. <a href="https://www.npmjs.com/package/body-parser">Body-Parser </a>
+-    3.3. [Body-Parser](https://www.npmjs.com/package/body-parser) : Node.js body parsing middleware
 
-    3.4. <a href="https://socket.io/">Socket-Io </a>
+-    3.4. [Socket-Io](https://socket.io/) : Biblioteca que permite a comunicação em tempo real, bidirecional e baseada em eventos entre o navegador e o servidor.
 
-    3.5.  <a href="http://www.embeddedjs.com/">EJS </a>
+-    3.5. [EJS](http://www.embeddedjs.com/) : O EJS é uma linguagem de templates simples que permite gerar marcação HTML com JavaScript simples.
