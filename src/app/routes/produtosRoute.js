@@ -1,10 +1,6 @@
 
 module.exports = function(app){
 
-    app.get('/',function(request, response){
-        response.render("home/home");
-    });
-
     app.get('/produtos',function(request, response, next){
         const connection = app.infra.ConnectionFactory();
         const produtosBanco = new app.infra.ProdutosDAO(connection);

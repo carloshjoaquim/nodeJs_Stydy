@@ -10,11 +10,13 @@ module.exports = function() {
 
     app.set('view engine', 'ejs'); // Setando variáveis para o express.
     app.set('views', './app/views'); // Setando pasta padrão para views.   
+    app.use(express.static('./app/public/'));
 
     //Middleware
     app.use(bodyParser.urlencoded({extended:true}));
     app.use(bodyParser.json());
     app.use(expressValidator());
+
     //
 
     load('infra', {cwd: 'app'})
