@@ -7,7 +7,7 @@ const connectMYSQL = function createDbConnection(){
             host: 'localhost',
             user: 'root',
             password: 'password',
-            database: 'Produtos'
+            database: 'Produtoss'
         });
     }
 
